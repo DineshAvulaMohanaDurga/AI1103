@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[a4paper,total={6in,8.5in}]{geometry}
+\title{AI 1103 assignment 1}
+\author{cs20btech11005 }
+\date{March 2021}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+    Problem 1.10
+\end{center}
+\textbf{Given Question:-}\\
+There are 5\% defective items in a large bulk of items.What is the probability that a sample of 10 items will not contain more than one defective items.\\
+\textbf{Given data:-}\\
+Given percentage of defective items in a bunch of items= 5\\
+$\Rightarrow$ probability of an item to be defective \hspace{0.8
+cm}= 5$ \% $\hspace{15pt} = 0.05\\
+$\Rightarrow$ probability of an item to be non-defective = 1-0.05 = 95$\%$\\
+\textbf{Required to find :-} Probability that a sample of 10 items will not contain more than 1 defective items.\\
+Lets assume that we are given 10 items.\\
+probability that all of them are non defective = $(0.95)^{10}$
+\begin{flushright}
+$\because$ probability of n independent \hspace*{1.8in} \\ events happening simultaneously= $p_1 \times p_2 \times ...... p_{n-1} \times p_n$
+\end{flushright}
+probability that one of them is defective = $^{10}C_1 \times (0.95)^9 \times (0.05)$
+\begin{flushright}
+here $^{10}C_1$ indicates choosing one out 
+of 10 items which is defective\\
+0.05 indicates the probability that the 
+choosen item to be defective\\
+$(0.95)^9$ indicates the probability that 
+the rest 9 items are non-defective\\
+$\because$ probability of n independent \hspace*{1.8in} \\ events happening simultaneously= $p_1 \times p_2 \times ...... p_{n-1} \times p_n$
+\end{flushright}
+So the probability that 10 items does not have more than 1 defective item \\
+\hspace*{3.5in}  $= (0.95)^{10}$ + $^{10}C_1 \times (0.95)^9 \times (0.05)$    \\
+\hspace*{3.5in} $=0.9139$\\
+\hspace*{3.5in} $=91.39 \%$
+\begin{flushright}
+$\because$ the probability of n mutually exclusive \hspace*{1.9in} \\events such that one of them happens = $p_1 + p_2 + ....+ p_{n-1} + p_n$
+\end{flushright}
+\textbf{$\therefore$ the the probability that 10 items does not have more than 1 defective item is 91.39\%}
+\end{document}
