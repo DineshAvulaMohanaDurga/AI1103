@@ -1,0 +1,183 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1103-Assignment 1}
+\author{Name: Avula Mohana Durga Dinesh Reddy , Roll Number: CS20BTECH11005}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_1/codes/ai1103_assignment1.py
+\end{lstlisting}
+%
+and latex codes from 
+%
+\begin{lstlisting}
+https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_1/main.tex
+\end{lstlisting}
+\section{Question}
+(Problem 1.10) There are 5\% defective items in a large bulk of items.What is the probability that a sample of 10 items will not contain more than one defective items.
+\section{Answer}
+let A be the event where item is defective\\
+Given percentage of defective items in a bunch of items =$5\%$ \\
+$\Rightarrow$ probability of an item to be defective \hspace{0.5cm}= 0.05 
+\begin{align}
+P(A)= 5 \%
+\end{align}
+$\Rightarrow$ probability of an item to be non-defective=0.95 
+\begin{align}
+P(A')= 95\%
+\end{align}
+\textbf{Required to find :-} Probability that a sample of 10 items will not contain more than 1 defective items.\\
+Lets assume that we are given 10 items and the event that given condition is satisfied be E.\\
+The event that all of then are non-defective be $E_1$.\\
+probability that all of them are non defective
+\begin{align}
+P(E_1)= (0.95)^{10}    
+\end{align}
+\begin{align} 
+\because \text{probability of n independent
+events happening} \nonumber \\
+\text{ simultaneously}= p_1 \times p_2 \times ...... p_{n-1} \times p_n
+\end{align}
+let $E_2$ be the event where only one of the 10 items is defective.\\
+probability that one of them is defective
+\begin{align}
+P(E_2)= ^{10}C_1 \times (0.95)^9 \times (0.05)    
+\end{align}
+
+\begin{itemize}
+    \item here $^{10}C_1$ indicates choosing one out of 10 items which is defective
+    \item 0.05 indicates the probability that the choosen item to be defective
+\item $(0.95)^9$ indicates the probability that 
+the rest 9 items are non-defective
+\item $\because$ probability of n independent events happening simultaneously= $p_1 \times p_2 \times ...... p_{n-1} \times p_n$
+\end{itemize}
+
+So the probability that 10 items does not have more than 1 defective item
+\begin{align}
+P(E) &= (0.95)^{10} + ^{10}C_1 \times (0.95)^9 \times (0.05) \nonumber   \\
+&=0.9139 \nonumber \\
+&=91.39 \%    
+\end{align}
+
+\begin{flushright}
+$\because$ the probability of n mutually exclusive events such that one of them happens\\ = $p_1 + p_2 + ....+ p_{n-1} + p_n$
+\end{flushright}
+\textbf{$\therefore$ the the probability that 10 items does not have more than 1 defective item is 91.39\%}
+\end{document}
