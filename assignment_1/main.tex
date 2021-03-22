@@ -156,7 +156,10 @@ probability that one of them is defective
 
 So the probability that 10 items does not have more than 1 defective item
 \begin{align}
-\pr{E} &= (0.95)^{10} + ^{10}C_1 \times (0.95)^9 \times (0.05) \nonumber   \\
+\pr{E} &= \pr{X \leq 1}\\
+&=\Sigma^1_{k=0} \pr{X=k}\\
+&=\pr{X=0} + \pr{X=1}\\
+&=(0.95)^{10} + ^{10}C_1 \times (0.95)^9 \times (0.05) \nonumber   \\
 &=0.9139 \nonumber \\
 &=91.39 \%    
 \end{align}
