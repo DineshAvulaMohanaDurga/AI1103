@@ -136,32 +136,27 @@ https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_1/main.tex
 let p be the probability for an item to be defective\\
 Given percentage of defective items in a bunch of items =$5\%$
 \begin{align}
-p = 0.05 =5 \%     
+p &=0.05 =5 \%     \\
+q &=1-p=0.95=95\%
 \end{align}
-Lets assume that we are given 10 items and the event that given condition is satisfied be E.\\
+Let X be the random variable defining the number of defective items in the given sample.
+\begin{align}
+    X&=B\brak{n,p}
+\end{align}
 From binomial distribution
 \begin{align}
-    \pr{X=k}=^{10}C_k \times (0.95)^{10-k} \times (0.05)^k
+    \pr{X=k}&=^{10}C_k \times (0.95)^{10-k} \times (0.05)^k\\
+\pr{X=0}&= (0.95)^{10}\\    
+\pr{X=1}&= ^{10}C_1 \times (0.95)^9 \times (0.05)    
 \end{align}
-probability that all of them are non defective
-\begin{align}
-\pr{X=0}= (0.95)^{10}    
-\end{align}
-probability that one of them is defective
-\begin{align}
-\pr{X=1}= ^{10}C_1 \times (0.95)^9 \times (0.05)    
-\end{align}
-
-
-
 So the probability that 10 items does not have more than 1 defective item
 \begin{align}
 \pr{E} &= \pr{X \leq 1}\\
 &=\Sigma^1_{k=0} \pr{X=k}\\
 &=\pr{X=0} + \pr{X=1}\\
-&=(0.95)^{10} + ^{10}C_1 \times (0.95)^9 \times (0.05) \nonumber   \\
+&=\brak{0.95}^{10} + ^{10}C_1 \times (0.95)^9 \times (0.05) \nonumber   \\
 &=0.9139 \nonumber \\
-&=91.39 \%    
+&=91.39 \%   
 \end{align}
-\textbf{$\therefore$ the the probability that 10 items does not have more than 1 defective item is 91.39\%}
+\textbf{$\therefore$ The probability that 10 items does not have more than 1 defective item is 91.39\%}
 \end{document}
