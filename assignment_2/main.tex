@@ -147,8 +147,10 @@ https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_2/main.tex
 \section{Question}
 (GATE-1999 problem-1.31) The joint probability density function of the random variables X, Y and Z is
 \begin{align}
+\begin{cases}
     f(x,y,z)&=8xyz, 0<x,y,z<1 \nonumber \\
     &=0 \text{ otherwise}
+\end{cases}
 \end{align}
 Then P($X<Y<Z$) is\\
 \begin{inparaenum}[(A)]
@@ -160,58 +162,28 @@ Then P($X<Y<Z$) is\\
 \section{Answer}
 Given joint probability density function j.d.f 
 \begin{align}
+\begin{cases}
     f(x,y,z)&=8xyz, 0<x,y,z<1 \nonumber \\
     &=0 \text{ otherwise}
+\end{cases}
 \end{align}
-we know that probability distribution function 
+we know that if probability distribution function (p.d.f) = f\brak{X} then
 \begin{align}
-    f(x)&=\int _{-\infty}^{\infty}\int _{-\infty}^{\infty} \text{f(x,y,z) dy dz} 
+    \pr{X\leq x}&=\int _{-\infty}^{x} \text{f(x) dx} 
 \end{align}
-    \text{When 0$<$x$<$1}
+from the given probability function we can say that $0<x,y,z<1$ as the probability is zero otherwise,So
 \begin{align}
-    & =\int _{-\infty}^{\infty}\brak{\int _{-\infty}^{0}\text{0 dy} + \int _0 ^1 \text{8xyz dy} +\int _{1}^{\infty}\text{0 dy}} dz \\
-    &=\int _{-\infty}^{\infty}\brak{0 + 8xz \int _{0}^{1} \text{y dy} + 0}dz \nonumber
-\end{align}
-\begin{align}
-    &=\int _{-\infty}^{\infty}\brak{8xz \times \frac{1}{2}} dz \nonumber \\
-    &=4x\int _{-\infty}^{\infty}\text{z dz} \nonumber\\
-    &=2x\\
-\text{When x$<$0 or x$>1$:-} \nonumber \\
-    &= \int _{-\infty}^{\infty}\int _{-\infty}^{\infty} \text{0 dy dz}\\
-    &=0\\
-\end{align}
-\begin{align}
-    \Rightarrow f(x)&=2x &\text{0$<x<1$} \nonumber\\
-    &=0 &x<0\text{ or }x>1
-\end{align}
-similarly 
-\begin{align}
-f(y)&=2y  &\text{0$<y<1$} \nonumber\\
-    &=0 &y<0\text{ or }y>1
-\end{align}
-and 
-\begin{align}
-f(z)&=2z  &\text{0$<z<1$} \nonumber\\
-    &=0 &z<0\text{ or }z>1
-\end{align}
-assuming $0<x,y,z<1$ as the pdf is 0 
-\begin{align}
-\pr{x<y}&=\int _{-\infty}^y f\brak{x} dx\\
-&=\int _{-\infty} ^0 \text{ 0 dx} +\int _0^y \text{2x dx}\\
-&=y^2
-\end{align}
-\begin{align}
-\pr{x<y<z}&=\int_{-\infty}^{\infty} f\brak{z}\brak{\int _{-\infty}^z \pr{x<y}\times f\brak{y}dy}dz\\
-&=\int_{-\infty}^{\infty}f\brak{z}\brak{\int_{-\infty}^0 \text{0 dy }+ \int _0^z 2y^3dy}dz\nonumber\\
-&=\int_{-\infty}^{\infty}f\brak{z}\frac{z^4}{2}dz\nonumber\\
-&=\int_{-\infty}^{0}\text{ 0 dz}+\int_{0}^{1}z^5\text{ dz} +\int_{1}^{\infty}\text{ 0 dz}\nonumber\\
+\pr{x<y<z}&=\int_{0}^{1} \int_{0}^{z} \int_{0}^{y} f\brak{x,y,z}\text{ dx dy dz}\\
+&=\int_{0}^{1} \int_{0}^{z} 8yz \brak{\int_{0}^{y} x \text{ dx}}\text{ dy dz}\nonumber\\
+&=\int_{0}^{1}4z\brak{\int_{0}^{z} y^3 \text{ dy}} \text{ dz}\nonumber\\
+&=\int_{0}^{1} z^5 dz \nonumber\\
 &=\frac{1}{6}
 \end{align}
 $\therefore$ The value of $\pr{X<Y<Z}$ is $\frac{1}{6}$ \\
 $\therefore$ option C is correct
-\begin{figure}[h!]
+\begin{figure}[p!]
     \centering
-    \includegraphics{figure_1.png}
+    \includegraphics[width=1\textwidth]{figure_1.png}
     \caption{Simulation vs Theoritical}
     \label{fig:my_label}
 \end{figure}
