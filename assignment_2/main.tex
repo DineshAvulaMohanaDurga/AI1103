@@ -173,10 +173,10 @@ we know that if probability distribution function (p.d.f) = f\brak{X} then
 \end{align}
 from the given probability function we can say that $0<x,y,z<1$ as the probability is zero otherwise,So
 \begin{align}
-\pr{x<y<z}&=\int_{0}^{1} \int_{0}^{z} \int_{0}^{y} f\brak{x,y,z}\text{ dx dy dz}\\
-&=\int_{0}^{1} \int_{0}^{z} 8yz \brak{\int_{0}^{y} x \text{ dx}}\text{ dy dz}\nonumber\\
-&=\int_{0}^{1}4z\brak{\int_{0}^{z} y^3 \text{ dy}} \text{ dz}\nonumber\\
-&=\int_{0}^{1} z^5 dz \nonumber\\
+\pr{x<y<z}&=\int_{z=0}^{1} \int_{y=0}^{z} \int_{x=0}^{y} f\brak{x,y,z}\text{ dx dy dz}\\
+&=\int_{z=0}^{1} \int_{y=0}^{z} 8yz \brak{\int_{x=0}^{y} x \text{ dx}}\text{ dy dz}\nonumber\\
+&=\int_{z=0}^{1}4z\brak{\int_{y=0}^{z} y^3 \text{ dy}} \text{ dz}\nonumber\\
+&=\int_{z=0}^{1} z^5 dz \nonumber\\
 &=\frac{1}{6}
 \end{align}
 $\therefore$ The value of $\pr{X<Y<Z}$ is $\frac{1}{6}$ \\
