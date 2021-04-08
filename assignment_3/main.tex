@@ -156,36 +156,48 @@ https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_3/main.tex
 \section{Answer}
 Given a binomial random variable \textbf{X} 
 \begin{align}
-\Rightarrow \pr{X=x}=\binom{n}{x}p^x q^{n-x}    
+\Rightarrow X \sim B\brak{r,p}
 \end{align}
 
 also given that $X_1,X_2,...,X_n$ are independent and identically distributed samples 
 \begin{align}
-    \Rightarrow \pr{X_i =x}=\binom{n}{x} p_i^x q_i^{n-x}
+    \Rightarrow X_1=X_2=...=X_n=X \sim B\brak{r,p}
 \end{align}
 also given that
 \begin{align}
-Y&=\Sigma_{i=1}^n X_i\\
-\Rightarrow \pr{Y=nx}&=\Sigma_{i=1}^n\binom{n}{x} p_i^x q_i^{n-x}
+Y&=\Sigma_{i=1}^n X_i
 \end{align}
- \textbf{Mean of Y:-}
- \begin{align}
-     \text{Mean of Y}\brak{\mu_Y,E\brak{Y}}&=\frac{\Sigma_{i=1}^n \text{Mean of $X_i$}\brak{ \mu_{X_i}}}{n}\\
-     &=\frac{\Sigma_{i=1}^n E\brak{X_i}}{n}\nonumber\\
-     &=\frac{\Sigma_{i=1}^n n p_i}{n}\nonumber\\
-     &=\Sigma_{i=1}^n p_i
- \end{align}
- \textbf{Variance of Y:-}
- \begin{align}
-     \text{Variance of Y}\brak{\sigma_Y}&=\brak{E\brak{Y}}^2 - E\brak{Y^2}\\
-     &=\brak{\Sigma_{i=1}^n p_i}^2- \frac{\Sigma_{i=1}^n E\brak{X_i^2}}{n}\nonumber\\
-     &=\brak{\Sigma_{i=1}^n p_i}^2- \frac{\Sigma_{i=1}^n n p_i q_i}{n}\nonumber\\
-     &=\brak{\Sigma_{i=1}^n p_i}^2- \Sigma_{i=1}^n p_i q_i
- \end{align}
-\textbf{Central Limit Theorem:-}\\
-It states that "In probability theory, the central limit theorem (CLT) establishes that, in many situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution (or Gaussian distribution informally a bell curve) even if the original variables themselves are not normally distributed".
-\vspace{0.5cm}\\
-So here as $X_i$ are independent variables we can apply CLT to all $X_i$'s and the outcome is distribution of Y which is according to CLT a \textbf{normal distribution}.
+consider two sets of Bernoulli trials with one set containing r elements and other one containing one element where both trials have the same probability 'p'. Now considering both as a whole set
+\begin{align}
+\pr{X=k}&=B\brak{r,p}+B\brak{1,p}\\
+&=\brak{\binom{r}{k}p^k q^{r-k}\times\binom{1}{0}q}+ \brak{\binom{r}{k-1}p^{k-1} q^{r+1-k} \times \binom{1}{1} p}\nonumber
+\end{align}
+\begin{align}
+&=\binom{r+1}{k}p^{k} q^{r+1-k}\nonumber\\
+&=B\brak{r+1,p}\nonumber\\
+\therefore B\brak{r,p}+B\brak{1,p}&=B\brak{r+1,p}
+\end{align}
+applying this recursively we get
+\begin{align}
+    B\brak{n_1,p}+B\brak{n_2,p}&=B\brak{n_1 +n_2,p}
+\end{align}
+using this recursively we get
+\begin{align}
+    Y&=B\brak{r n,p}
+\end{align}
+$\Rightarrow$ using standard formulae
+\begin{align}
+\text{mean of Y } \mu_Y&=nrp \nonumber\\
+\text{and variance } \sigma^2_Y&=nrp\brak{1-p}
+\end{align}
+By central limit theorem\brak{CLT}
+\begin{align}
+    Z_n &= \sqrt{n}\brak{\frac{\frac{Y}{n} - \mu_Y}{\sigma_Y}}\nonumber\\
+    &=\frac{Y-n \mu_Y}{\sqrt{n} \sigma_Y}
+\end{align}
+$\lim_{n \rightarrow \infty} Z_n \sim N\brak{0,1}$ \\
+Which is a normal distribution\\
+$\therefore$ the correct answer is option D
 \begin{figure}[p!]
     \centering
     \includegraphics[width=1\textwidth]{figure1.png}
