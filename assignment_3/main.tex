@@ -165,21 +165,18 @@ also given that $X_1,X_2,...,X_n$ are independent and identically distributed sa
 \end{align}
 also given that
 \begin{align}
-Y&=\Sigma_{i=1}^n X_i
+Y&=\displaystyle\sum_{i=1}^n X_i
 \end{align}
-consider two sets of Bernoulli trials with one set containing r elements and other one containing one element where both trials have the same probability 'p'. Now considering both as a whole set
-\begin{align}
-\pr{X=k}&=B\brak{r,p}+B\brak{1,p}\\
-&=\brak{\binom{r}{k}p^k q^{r-k}\times\binom{1}{0}q}+ \brak{\binom{r}{k-1}p^{k-1} q^{r+1-k} \times \binom{1}{1} p}\nonumber
+We know that the characteristic equation of binomial trials with n elements is \begin{align}
+    B\brak{n,p}&={\brak{1-p+p e^{it}}}^n
 \end{align}
+consider two sets of Bernoulli trials containing $r_1 \& r_2$ elements respectively where both trials have the same probability 'p'. Now considering both as a whole set
 \begin{align}
-&=\binom{r+1}{k}p^{k} q^{r+1-k}\nonumber\\
-&=B\brak{r+1,p}\nonumber\\
-\therefore B\brak{r,p}+B\brak{1,p}&=B\brak{r+1,p}
-\end{align}
-applying this recursively we get
-\begin{align}
-    B\brak{n_1,p}+B\brak{n_2,p}&=B\brak{n_1 +n_2,p}
+B\brak{r_1,p}+B\brak{r_2,p}&={\brak{1-p+p e^{it}}}^{r_1}\nonumber\\
+&\hspace*{1cm}\times {\brak{1-p+p e^{it}}}^{r_2}\\
+&={\brak{1-p+p e^{it}}}^{r_1+r_2}\\
+&=B\brak{r_1+r_2,p}\nonumber\\
+\therefore B\brak{r_1,p}+B\brak{r_2,p}&=B\brak{r_1+r_2,p}
 \end{align}
 using this recursively we get
 \begin{align}
@@ -198,9 +195,9 @@ By central limit theorem\brak{CLT}
 $\lim_{n \rightarrow \infty} Z_n \sim N\brak{0,1}$ \\
 Which is a normal distribution\\
 $\therefore$ the correct answer is option D
-\begin{figure}[p!]
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{figure1.png}
+    \includegraphics[width=0.5\textwidth]{figure1.png}
     \caption{distribution of Y}
     \label{fig:my_label}
 \end{figure}
