@@ -127,7 +127,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{AI1103-Assignment 2}
+\title{AI1103-Assignment 3}
 \author{Name: Avula Mohana Durga Dinesh Reddy , Roll Number: CS20BTECH11005}
 \maketitle
 \newpage
@@ -168,11 +168,13 @@ also given that
 Y&=\displaystyle\sum_{i=1}^n X_i
 \end{align}
 We know that the characteristic equation of binomial trials with n elements is \begin{align}
-    B\brak{n,p}&={\brak{1-p+p e^{it}}}^n
+    \phi_X\brak{t}&={\brak{1-p+p e^{it}}}^n
 \end{align}
-consider two sets of Bernoulli trials containing $r_1 \& r_2$ elements respectively where both trials have the same probability 'p'. Now considering both as a whole set
+consider two sets of Bernoulli trials containing $r_1 \& r_2$ elements respectively where both trials have the same probability 'p'$\brak{X\sim B\brak{r_1,p},Y\sim\brak{r_2,p}}$. Now considering both as a whole set
 \begin{align}
-B\brak{r_1,p}+B\brak{r_2,p}&={\brak{1-p+p e^{it}}}^{r_1}\nonumber\\
+B\brak{r_1,p}+B\brak{r_2,p}&=\Phi_{X+Y}\brak{t}\\
+&=\Phi_X\brak{t}\times \Phi_Y\brak{t}\nonumber\\
+&={\brak{1-p+p e^{it}}}^{r_1}\nonumber\\
 &\hspace*{1cm}\times {\brak{1-p+p e^{it}}}^{r_2}\\
 &={\brak{1-p+p e^{it}}}^{r_1+r_2}\\
 &=B\brak{r_1+r_2,p}\nonumber\\
