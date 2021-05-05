@@ -167,13 +167,13 @@ For F to be continuous at \brak{x,y}\\
 On expanding the limits of integrals we get
 \begin{align}
 \lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=-\infty}^x P\brak{X,Y}dXdY \nonumber \\
-+\int_{Y=-\infty}^y \int_{X=x}^{x+k} P\brak{X,Y}dXdY \nonumber \\
++\int_{Y=-\infty}^y \int_{X=x}^{x+h} P\brak{X,Y}dXdY \nonumber \\
 +\int_{Y=y}^{y+k} \int_{X=x}^{x+h} P\brak{X,Y}dXdY&=0
 \end{align}
 Which is zero if P\brak{X,Y} is defined over the integrating region i.e P\brak{X,Y} should be defined over the intergrating region of 
 \begin{enumerate}
 \item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=-\infty}^x P\brak{X,Y}dXdY\]
-\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=-\infty}^y \int_{X=x}^{x+k} P\brak{X,Y}dXdY\]
+\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=-\infty}^y \int_{X=x}^{x+h} P\brak{X,Y}dXdY\]
 \item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=x}^{x+h} P\brak{X,Y}dXdY\]
 \end{enumerate}
 The integrating regions tend to be equal to 
@@ -189,5 +189,11 @@ $\Rightarrow$ P\brak{X,Y} should be defined over regions 1,2,3. i.e
 \item P$\brak{X=x,-\infty<Y<y}$ 
 \item P$\brak{x,y} $ should be defined
 \end{enumerate}
-Which is satisfied by options 3,4.
+\textbf{Which is satisfied by options 3,4}.\\
+Let's consider an example similar to dirac-delta function.
+\begin{align}
+G\brak{X,Y}&=\infty \hspace{0.5in} \brak{X,Y}=\brak{x,y_1}\text{ where }y_1>y\nonumber \\
+&=0 \hspace{0.5in} \text{ otherwise}
+\end{align}
+\textbf{example satisfies options 1,2 but F\brak{x,y} fails to be continous at \brak{x,y}}
 \end{document}
