@@ -189,11 +189,31 @@ $\Rightarrow$ P\brak{X,Y} should be defined over regions 1,2,3. i.e
 \item P$\brak{X=x,-\infty<Y<y}$ 
 \item P$\brak{x,y} $ should be defined
 \end{enumerate}
-\textbf{Which is satisfied by options 3,4}.\\
+\vspace{2in}
+Now lets verify the options
+\begin{enumerate}
+\item Option 1 defines P\brak{X} only in region 3 but not 1,2.\\
+Lets disprove this option using a counter-example.\\
 Let's consider an example similar to dirac-delta function.
 \begin{align}
-G\brak{X,Y}&=\infty \hspace{0.5in} \brak{X,Y}=\brak{x,y_1}\text{ where }y_1>y\nonumber \\
-&=0 \hspace{0.5in} \text{ otherwise}
+G\brak{X,Y}&=\infty \hspace{0.3in} \brak{X,Y}=\brak{x,y_1}\text{ where }y_1<y \nonumber \\
+&=0 \hspace{0.3in} \text{ otherwise}
 \end{align}
-\textbf{example satisfies options 1,2 but F\brak{x,y} fails to be continous at \brak{x,y}}
+Here G\brak{x,y} is 0 still F is not continuous at \brak{x,y} parellel to X-axis
+\begin{align}
+F\brak{X,Y}&=1 \hspace{0.3in} X>x,Y>y_1 \nonumber\\
+&=0 \hspace{0.3in} otherwise
+\end{align}
+\textbf{So this option is false}
+\item Option 2 defines P\brak{X} only in region 3 and either region 1 or region 2.\\
+If we take the same example in equation 2.0.6 it satisfies G\brak{Y=y}=0 i.e option 2 but F is not continuous at \brak{x,y}.\\
+\textbf{So this option is also false}
+\item Option 3 defines p\brak{X} in all three regions.\\
+\textbf{So option 3 is true}
+\item Option 4 also defines p\brak{X} in all three regions.\\
+\textbf{So option 4 is also true}
+\begin{center}
+\textbf{Hence correct options are 3,4.}
+\end{center}
+\end{enumerate}
 \end{document}
