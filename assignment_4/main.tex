@@ -55,6 +55,8 @@
     \usepackage{lscape}     
 \usepackage{multicol}
 \usepackage{chngcntr}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
 \DeclareMathOperator*{\Res}{Res}
 
@@ -140,77 +142,93 @@ Download all Latex codes from
 https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_4/main.tex
 \end{lstlisting}
 \section{Question}
-\brak{\text{CSIR-UGC-NET June 2015 Q 104}}Let X and Y be random variables with joint cumulative distribution function F\brak{x,y}. Then which of the following cnditions are sufficient for \brak{x,y}$\in R^2$ to be a point of continuity of F?
+\brak{\text{CSIR-UGC-NET June 2015 Q 104}}Let X and Y be random variables with joint cumulative distribution function $F_{XY}\brak{x,y}$. Then which of the following cnditions are sufficient for $\brak{x_0,y_0} \in R^2$ to be a point of continuity of $F_{XY}$?
 \begin{enumerate}
-\item P\brak{X=x,Y=y}=0
-\item Either P\brak{X=x}=0 or P\brak{Y=y}=0.
-\item P\brak{X=x}=0 and P\brak{Y=y}=0.
-\item P\brak{X=x,Y\leq y}=0 and P\brak{X\leq x,Y=y}=0.
+\item $p_{XY}\brak{x=x_0,y=y_0}=0$
+\item Either $p_{XY}\brak{x=x_0}=0$ or $p_{XY}\brak{y=y_0}=0$.
+\item $p_{XY}\brak{x=x_0}=0$ and $p_{XY}\brak{y=y_0}=0$.
+\item $p_{XY}\brak{x=x_0,y\leq y_0}$=0\\
+ and $p_{XY}\brak{x\leq x_0,y=y_0}$=0.
 \end{enumerate}
 
 \section{Answer}
-Let F\brak{x,y} be joint cumulative distribution function and P\brak{x,y} be joint probability distribution function.\\
+Let $F_{XY}\brak{x,y}$ be joint cumulative distribution function and $P_{XY}\brak{x,y}$ be joint probability distribution function.\\
 From the definitoion of cummulative distribution function 
 \begin{align}
 pdf &= \frac{d}{dx} cdf \nonumber \\
-P\brak{X} &= \frac{d}{dx} F\brak{X}\nonumber\\
+P\brak{x} &= \frac{d}{dx} F\brak{x}\nonumber\\
 &or\nonumber\\
-F\brak{x} &= \int_{X=-\infty}^x P\brak{X}dX\\
-\Rightarrow F\brak{x,y} &= \int_{Y=-\infty}^y \int_{X=-\infty}^x P\brak{X,Y}dXdY
+F\brak{x} &= \int_{x=-\infty}^x P\brak{x}dx\\
+\Rightarrow F_{XY}\brak{x,y} &= \int_{y=-\infty}^y \int_{x=-\infty}^x p_{XY}\brak{x,y}dxdy
 \end{align}
-For F to be continuous at \brak{x,y}\\
+\begin{lemma}
+$F_{XY}\brak{x,y}$ is continuous at $\brak{x_0,y_0}$ iff $p_{XY}$\brak{x,y} is defined in the regions
+\begin{enumerate}
+\item $-\infty<x<x_0,y=y_0$  
+\item x=$x_0$,$-\infty<y<y_0$ 
+\item point $\brak{x_0,y_0}$ 
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For F to be continuous at \brak{x,y}
 \begin{align}
-\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \brak{F\brak{x+h,y+k} - F\brak{x,y}}&=0\\
-\lim_{k\rightarrow 0}\lim_{h\rightarrow 0}\int_{Y=-\infty}^{y+k} \int_{X=-\infty}^{x+h} P\brak{X,Y}dXdY \nonumber\\
--\int_{Y=-\infty}^y \int_{X=-\infty}^x P\brak{X,Y}dXdY&=0 
+\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \brak{F_{XY}\brak{x_0+h,y_0+k} - F_{XY}\brak{x_0,y_0}}&=0\\
+\lim_{k\rightarrow 0}\lim_{h\rightarrow 0}\int_{y=-\infty}^{y_0+k} \int_{x=-\infty}^{x_0+h} p_{XY}\brak{x,y}dxdy \nonumber\\
+-\int_{y=-\infty}^{y_0} \int_{x=-\infty}^{x_0} p_{XY}\brak{x,y}dxdy&=0 
 \end{align}
 On expanding the limits of integrals we get
 \begin{align}
-\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=-\infty}^x P\brak{X,Y}dXdY \nonumber \\
-+\int_{Y=-\infty}^y \int_{X=x}^{x+h} P\brak{X,Y}dXdY \nonumber \\
-+\int_{Y=y}^{y+k} \int_{X=x}^{x+h} P\brak{X,Y}dXdY&=0
+\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{y=y_0}^{y_0+k} \int_{x=-\infty}^{x_0} p_{XY}\brak{x,y}dxdy \nonumber \\
++\int_{y=-\infty}^{y_0} \int_{x=x_0}^{x_0+h} p_{XY}\brak{x,y}dxdy \nonumber \\
++\int_{y=y_0}^{y_0+k} \int_{x=x_0}^{x_0+h} p_{XY}\brak{x,y}dxdy&=0
 \end{align}
-Which is zero if P\brak{X,Y} is defined over the integrating region i.e P\brak{X,Y} should be defined over the intergrating region of 
+Which is zero if $p_{XY}\brak{x,y}$ is defined over the integrating region i.e $p_{XY}\brak{x,y}$ should be defined over the intergrating region of 
 \begin{enumerate}
-\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=-\infty}^x P\brak{X,Y}dXdY\]
-\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=-\infty}^y \int_{X=x}^{x+h} P\brak{X,Y}dXdY\]
-\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{Y=y}^{y+k} \int_{X=x}^{x+h} P\brak{X,Y}dXdY\]
+\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{y=y_0}^{y_0+k} \int_{x=-\infty}^{x_0} p_{XY}\brak{x,y}dxdy\]
+\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{y=-\infty}^{y_0} \int_{x=x_0}^{x_0+h} p_{XY}\brak{x,y}dxdy\]
+\item \[\lim_{k\rightarrow 0}\lim_{h\rightarrow 0} \int_{y=y_0}^{y_0+k} \int_{x=x_0}^{x_0+h} p_{XY}\brak{x,y}dxdy\]
 \end{enumerate}
 The integrating regions tend to be equal to 
 \begin{enumerate}
-\item $-\infty<X<x,Y=y$  
-\item X=x,$-\infty<Y<y$ 
-\item point \brak{x,y} 
+\item $-\infty<x<x_0,y=y_0$  
+\item x=$x_0$,$-\infty<y<y_0$ 
+\item point $\brak{x_0,y_0}$ 
 \end{enumerate}
 Let these be regions 1,2,3 respectively\\
 $\Rightarrow$ P\brak{X,Y} should be defined over regions 1,2,3. i.e
 \begin{enumerate}
-\item P$\brak{-\infty<X<x,Y=y}$  
-\item P$\brak{X=x,-\infty<Y<y}$ 
-\item P$\brak{x,y} $ should be defined
+\item p$_{XY}\brak{-\infty<x<x_0,y=y_0}$  
+\item p$_{XY}\brak{x=x_0,-\infty<y<y_0}$ 
+\item p$_{XY}\brak{x,y} $ should be defined
 \end{enumerate}
-\vspace{2in}
+\end{proof}
 Now lets verify the options
 \begin{enumerate}
-\item Option 1 defines P\brak{X} only in region 3 but not 1,2.\\
-Lets disprove this option using a counter-example.\\
+\item Option 1 defines $p_{XY}\brak{x,y}$ only in region 3 but not 1,2.\\
+\textbf{Counter-example:-}\\
 Let's consider an example similar to dirac-delta function.
 \begin{align}
-G\brak{X,Y}&=\infty \hspace{0.3in} \brak{X,Y}=\brak{x,y_1}\text{ where }y_1<y \nonumber \\
-&=0 \hspace{0.3in} \text{ otherwise}
+P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_0,y_1}\text{ where }y_1<y_0  \nonumber \\
+&=0 \hspace{0.15in} \text{ otherwise}
 \end{align}
-Here G\brak{x,y} is 0 still F is not continuous at \brak{x,y} parellel to X-axis
+Here $P_{XY}$\brak{x,y} is 0 still $F_{XY}$ is not continuous at $\brak{x_0,y_0}$ parellel to X-axis
 \begin{align}
-F\brak{X,Y}&=1 \hspace{0.3in} X>x,Y>y_1 \nonumber\\
+F_{XY}\brak{x,y}&=1 \hspace{0.3in} x>x_0,y>y_1 \nonumber\\
 &=0 \hspace{0.3in} otherwise
 \end{align}
-\textbf{So this option is false}
-\item Option 2 defines P\brak{X} only in region 3 and either region 1 or region 2.\\
-If we take the same example in equation 2.0.6 it satisfies G\brak{Y=y}=0 i.e option 2 but F is not continuous at \brak{x,y}.\\
-\textbf{So this option is also false}
-\item Option 3 defines p\brak{X} in all three regions.\\
+\textbf{So option 1 is false}
+\item Option 2 defines $p_{XY}\brak{x,y}$ only in region 3 and either region 1 or region 2.\\
+If we take the same example in equation 2.0.6 it satisfies $p_{XY}$\brak{Y=y}=0 i.e option 2 but $F_{XY}$ is not continuous at \brak{x,y}.\\
+\textbf{So option 2 is also false}\\
+\textit{Another counter example is:-}
+\begin{align}
+P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_1,y_0}\text{ where }x_1<x_0  \nonumber \\
+&=0 \hspace{0.15in} \text{ otherwise}
+\end{align}
+This is also a function similar to dirac-delta function
+\item Option 3 defines $p_{XY}\brak{x,y}$ in all three regions.\\
 \textbf{So option 3 is true}
-\item Option 4 also defines p\brak{X} in all three regions.\\
+\item Option 4 also defines $p_{XY}\brak{x,y}$ in all three regions.\\
 \textbf{So option 4 is also true}
 \begin{center}
 \textbf{Hence correct options are 3,4.}
