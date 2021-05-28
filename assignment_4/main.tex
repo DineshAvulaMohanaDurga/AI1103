@@ -83,6 +83,7 @@ columns=fullflexible
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand{\R}{\mathbb{R}}
 \bibliographystyle{IEEEtran}
 \raggedbottom
 \setlength{\parindent}{0pt}
@@ -142,7 +143,7 @@ Download all Latex codes from
 https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_4/main.tex
 \end{lstlisting}
 \section{Question}
-\brak{\text{CSIR-UGC-NET June 2015 Q 104}}Let X and Y be random variables with joint cumulative distribution function $F_{XY}\brak{x,y}$. Then which of the following cnditions are sufficient for $\brak{x_0,y_0} \in R^2$ to be a point of continuity of $F_{XY}$?
+\brak{\text{CSIR-UGC-NET June 2015 Q 104}}Let X and Y be random variables with joint cumulative distribution function $F_{XY}\brak{x,y}$. Then which of the following cnditions are sufficient for $\brak{x_0,y_0} \in \R^2$ to be a point of continuity of $F_{XY}$?
 \begin{enumerate}
 \item $p_{XY}\brak{x=x_0,y=y_0}=0$
 \item Either $p_{XY}\brak{x=x_0}=0$ or $p_{XY}\brak{y=y_0}=0$.
@@ -163,52 +164,39 @@ $F_{XY}\brak{x,y}$ is continuous at $\brak{x_0,y_0}$ iff all
 exists and is finite.
 \end{lemma}
 \begin{proof}
-One of the unique properties of cdf is that if cdf is continuous at a point then its differentiable at that point.i.e
-\begin{align}
-\text{ continuity of cdf} &\Rightarrow \text{ differentiability of cdf}.
-\end{align}
-one of the properties of a function f\brak{x} is that if its differentiable then its continuous.i.e
-\begin{align}
-\text{ differentiability of f\brak{x} }  &\Rightarrow \text{ continuity of f\brak{x}}.
-\end{align}
-$\therefore $from equations 2.0.1 and 2.0.2 we can say that 
+One of the unique properties of cdf is 
 \begin{align}
 \text{ continuity of cdf} &\Leftrightarrow \text{ differentiability of cdf}.
 \end{align}
-So the conditions of differentiabilitty of cdf and the conditions of continuity of cdf are the same.\\
 Lets check the conditions for differentiability of cdf.\\
-For a function f\brak{x,y} to be differentiable at $\brak{x_0,y_0}$
-\begin{enumerate}
-\item $f_x\brak{x,y}$ and $f_y\brak{x,y}$ should exist and be finite.
-\item $$\lim_{t \rightarrow 0} \frac{f\brak{x_0+u_1 t,y_0 + u_2 t}-f\brak{x_0,y_0}}{t}$$ should exist and be finite for all unit vector u=$u_1 \hat{i} + u_2 \hat{j}$
-\end{enumerate}
-So for cdf to be differentiable at $\brak{x_0,y_0}$
+For cdf to be differentiable at $\brak{x_0,y_0}$
 \begin{enumerate}
 \item 
 \begin{align}
-\lim_{h \rightarrow 0} \frac{F_{XY}\brak{x_0+h,y_0}-F_{XY}\brak{x_0,y_0}}{h}\nonumber \\
-= p_{XY}\brak{x=x_0,y \leq y_0}\nonumber \\
-\text{should exist and be finite.Similarly,} \\
-\lim_{k \rightarrow 0} \frac{F_{XY}\brak{x_0,y_0+k}-F_{XY}\brak{x_0,y_0}}{k}\nonumber \\
-=p_{XY}\brak{x \leq x_),y=y_0}\nonumber \\
- \text{should exist and be finite}
+\lim_{h \rightarrow 0} \frac{F_{XY}\brak{x_0+h,y_0}-F_{XY}\brak{x_0,y_0}}{h} & \in \R\nonumber \\
+\Rightarrow p_{XY}\brak{x=x_0,y \leq y_0} & \in \R
 \end{align}
 \item 
 \begin{align}
-\lim_{t \rightarrow 0} \frac{F_{X,Y}\brak{x_0+u_1 t,y_0 + u_2 t}-F_{X,Y}\brak{x_0,y_0}}{t} \nonumber \\
-=p_{X,Y}\brak{x=x_0,y=y_0} \nonumber \\
- \text{ should exist and be finite}
+\lim_{k \rightarrow 0} \frac{F_{XY}\brak{x_0,y_0+k}-F_{XY}\brak{x_0,y_0}}{k} &\in \R \nonumber \\
+\Rightarrow p_{XY}\brak{x \leq x_),y=y_0} & \in \R 
+\end{align}
+\item 
+\begin{align}
+\lim_{t \rightarrow 0} \frac{F_{X,Y}\brak{x_0+u_1 t,y_0 + u_2 t}-F_{X,Y}\brak{x_0,y_0}}{t} &\in \R \nonumber \\
+\Rightarrow p_{X,Y}\brak{x=x_0,y=y_0} &\in \R
 \end{align}
 \end{enumerate}
-From equations 2.0.4 , 2.0.5 , 2.0.6 we can prove that lemma 2.1 is true.
+Equations 2.0.2 ,2.0.3 ,2.0.4 are the conditions for cdf to be differentiable.\\
+But using equation 2.0.1 ,2.0.2 ,2.0.3 ,2.0.4 we can say that lemma 2.1 is true.
 \end{proof}
-Now lets verify the options
+\textbf{Now lets verify the options}
 \begin{enumerate}
-\item Option 1 fails to satisfy the lemma 2.1 as it defines only 3 of lemma 2.1 but not 1,2.\\
+\item Option 1 $\Rightarrow$ 2.1-3 ,but Option 1 $\not \Rightarrow$ 2.1-1 \& 2.1-2 .Hence it fails lemma 2.1.\\
 \textbf{Counter-example:-}\\
 Let's consider an example similar to dirac-delta function.
 \begin{align}
-P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_0,y_1}\text{ where }y_1<y_0  \nonumber \\
+P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_0,y_1} , y_1<y_0  \nonumber \\
 &=0 \hspace{0.15in} \text{ otherwise}
 \end{align}
 Here $P_{XY}\brak{x_0,y_0}$ is 0 still $F_{XY}$ is not continuous at $\brak{x_0,y_0}$ parellel to X-axis
@@ -217,11 +205,11 @@ F_{XY}\brak{x,y}&=1 \hspace{0.3in} x>x_0,y>y_1 \nonumber\\
 &=0 \hspace{0.3in} otherwise
 \end{align}
 \textbf{So option 1 is false}
-\item Option 2 also fails to satisfy lemma 2.1 as it defines only 3 and either 1 or 2 of lemma 2.1.\\
+\item Option 2 $\Rightarrow$ 2.1-3 ,either 2.1-1 or 2.1-2 .Hence it fails lemma 2.1.\\
 \textbf{Counter-example:-}\\
 Lets consider another function similar to dirac delta function
 \begin{align}
-P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_1,y_0}\text{ where }x_1<x_0  \nonumber \\
+P_{XY}\brak{x,y}&=\infty \hspace{0.15in} \brak{x,y}=\brak{x_1,y_0} , x_1<x_0  \nonumber \\
 &=0 \hspace{0.15in} \text{ otherwise}
 \end{align}
 Here $p_{XY}\brak{Y=y_0}=0$ but $F_{XY}$ is not continuous at $\brak{x_0,y_0}$.
