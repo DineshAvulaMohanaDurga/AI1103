@@ -156,42 +156,43 @@ https://github.com/DineshAvulaMohanaDurga/AI1103/blob/main/assignment_4/main.tex
 Let $F_{XY}\brak{x,y}$ be joint cumulative distribution function and $P_{XY}\brak{x,y}$ be joint probability distribution function.\\
 \begin{lemma}
 $F_{XY}\brak{x,y}$ is continuous at $\brak{x_0,y_0}$ iff all
-\begin{enumerate}
-\item $p_{X,Y}\brak{x=x_0,y \leq y_0}$
-\item $p_{X,Y}\brak{x \leq x_0,y = y_0}$
-\item $p_{X,Y}\brak{x=x_0,y = y_0}$
-\end{enumerate}
+\begin{align*}
+p_{X,Y}\brak{x=x_0,y \leq y_0} \label{2.1-1} \tag{1}\\
+p_{X,Y}\brak{x \leq x_0,y = y_0}\label{2.1-2} \tag{2}\\
+p_{X,Y}\brak{x=x_0,y = y_0}\label{2.1-3} \tag{3}
+\end{align*}
+
 exists and is finite.
 \end{lemma}
 \begin{proof}
 One of the unique properties of cdf is 
 \begin{align}
-\text{ continuity of cdf} &\Leftrightarrow \text{ differentiability of cdf}.
+\text{ continuity of cdf} &\Leftrightarrow \text{ differentiability of cdf}\label{relation c&d}.
 \end{align}
 Lets check the conditions for differentiability of cdf.\\
 For cdf to be differentiable at $\brak{x_0,y_0}$
 \begin{enumerate}
 \item 
 \begin{align}
-\lim_{h \rightarrow 0} \frac{F_{XY}\brak{x_0+h,y_0}-F_{XY}\brak{x_0,y_0}}{h} & \in \R\nonumber \\
-\Rightarrow p_{XY}\brak{x=x_0,y \leq y_0} & \in \R
+\lim_{h \rightarrow 0} \frac{F_{XY}\brak{x_0+h,y_0}-F_{XY}\brak{x_0,y_0}}{h} & \in \R \nonumber \\
+\Rightarrow p_{XY}\brak{x=x_0,y \leq y_0} & \in \R \label{cfd-1} 
 \end{align}
 \item 
 \begin{align}
 \lim_{k \rightarrow 0} \frac{F_{XY}\brak{x_0,y_0+k}-F_{XY}\brak{x_0,y_0}}{k} &\in \R \nonumber \\
-\Rightarrow p_{XY}\brak{x \leq x_),y=y_0} & \in \R 
+\Rightarrow p_{XY}\brak{x \leq x_),y=y_0} & \in \R \label{cfd-2}
 \end{align}
 \item 
 \begin{align}
 \lim_{t \rightarrow 0} \frac{F_{X,Y}\brak{x_0+u_1 t,y_0 + u_2 t}-F_{X,Y}\brak{x_0,y_0}}{t} &\in \R \nonumber \\
-\Rightarrow p_{X,Y}\brak{x=x_0,y=y_0} &\in \R
+\Rightarrow p_{X,Y}\brak{x=x_0,y=y_0} &\in \R \label{cfd-3}
 \end{align}
 \end{enumerate}
-From equation 2.0.1 ,2.0.2 ,2.0.3 ,2.0.4 we can say that lemma 2.1 is true.
+From equation \ref{relation c&d} ,\ref{cfd-1} ,\ref{cfd-2} ,\ref{cfd-3} we can say that lemma 2.1 is true.
 \end{proof}
 \textbf{Now lets verify the options}
 \begin{enumerate}
-\item Option 1 $\Rightarrow$ 2.1-3 ,but Option 1 $\not \Rightarrow$ 2.1-1 \& 2.1-2 .Hence it fails lemma 2.1.\\
+\item Option 1 $\Rightarrow$ (\ref{2.1-3}) ,but Option 1 $\not \Rightarrow$ (\ref{2.1-1}) \& (\ref{2.1-2}) .Hence it fails lemma 2.1.\\
 \textbf{Counter-example:-}\\
 Let's consider an example similar to dirac-delta function.
 \begin{align}
@@ -204,7 +205,7 @@ F_{XY}\brak{x,y}&=1 \hspace{0.3in} x>x_0,y>y_1 \nonumber\\
 &=0 \hspace{0.3in} otherwise
 \end{align}
 \textbf{So option 1 is false}
-\item Option 2 $\Rightarrow$ 2.1-3 ,either 2.1-1 or 2.1-2 .Hence it fails lemma 2.1.\\
+\item Option 2 $\Rightarrow$ (\ref{2.1-3}) ,either (\ref{2.1-1}) or (\ref{2.1-2}) .Hence it fails lemma 2.1.\\
 \textbf{Counter-example:-}\\
 Lets consider another function similar to dirac delta function
 \begin{align}
