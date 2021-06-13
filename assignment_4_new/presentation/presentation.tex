@@ -136,11 +136,11 @@ Where
 A distribution is said to be a geometric distribution if it is one of the two following distributions
 \begin{enumerate}
 \item The probability distribution of X number of bernoulli trials needed to get one success, supported on the set \brak{1,2,3..}
-\begin{align}
+\begin{align}\label{geometric 1}
 \pr{X=k}=\brak{1-p}^{k-1} p , \brak{k=1,2,3,\cdots}
 \end{align}
 \item The probability distribution of number Y=X-1 of failures before the first success, supported on the set \brak{0,1,2,3..}
-\begin{align}
+\begin{align}\label{geometric 2}
 \pr{Y=k}=\pr{X=k+1}=\brak{1-p}^k p , \brak{k=0,1,2,\cdots}
 \end{align}
 \end{enumerate}
@@ -192,7 +192,7 @@ p\brak{Y=k}&=\int_k^{k+1} p\brak{X=x} dx\\
 &=\int_k^{k+1} e^{-x} dx \nonumber \\
 &=e^{-k}\brak{1-e^{-1}} \label{PDF of Y}
 \end{align}
-Hence using definition of geometric distribution  and (\ref{PDF of Y}) lemma 2.2 is proved.
+Hence using (\ref{geometric 2}) and (\ref{PDF of Y}) lemma 2.2 is proved.
 \end{proof}`
 \end{frame}
 
