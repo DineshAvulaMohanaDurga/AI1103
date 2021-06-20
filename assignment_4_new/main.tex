@@ -168,29 +168,21 @@ Then the distribution is said to be in the form of geometric distribution.
 \begin{lemma}
 pdf of X is 
 \begin{align}
-P\brak{X=x}&=e^{-x}
+\pr{X}&=\frac{1}{\theta} e^{-\frac{x}{\theta}}
 \end{align}
 \end{lemma}
 \begin{proof}
 Given pdf of X is 
 \begin{align}
-f\brak{\frac{x}{\theta}}&=\frac{1}{\theta} e^{-x/\theta},x>0,\text{where } \theta >0 \text{ is unknown}\\
-f\brak{X}&=\frac{1}{\theta}e^{-X},X>0\text{ as }x>0,\theta>0
-\end{align}
-$\because$ The total probability is 1 
-\begin{align}
-\int_0 ^\infty f\brak{X} dX &=1 \\
-\int _0^\infty \frac{1}{\theta} e^{-X} dX&=1 \nonumber \\
-\frac{1}{\theta}&=1 \nonumber \\
-\Rightarrow \theta &=1 \\
-\text{So }f\brak{X} = e^{-X}
+f\brak{x | \theta}&=\frac{1}{\theta} e^{-x/\theta},x>0,\text{where } \theta >0 \text{ is unknown}\\
+f\brak{x}&=\frac{1}{\theta}e^{-\frac{x}{\theta}} \text{since x and }\theta \text{ are independent} 
 \end{align}
 Hence lemma 2.2 is proved.
 \end{proof}
 \begin{lemma}
 pdf of Y is 
 \begin{align}
-p\brak{Y=k}&=e^{-k} \brak{1-e^{-1}}
+p\brak{Y=k}&=e^{-\frac{k}{\theta}} \brak{1-e^{-\frac{k}{\theta}}}
 \end{align}
 and is in the form of geometric distribution.
 \end{lemma}
@@ -198,8 +190,8 @@ and is in the form of geometric distribution.
 Also given that Y=k if $k \leq X <k+1$ k=0,1,2,$\cdots$
 \begin{align}
 p\brak{Y=k}&=\int_k^{k+1} p\brak{X=x} dx\\
-&=\int_k^{k+1} e^{-x} dx \nonumber \\
-&=e^{-k}\brak{1-e^{-1}} \label{pdf of Y}
+&=\int_k^{k+1} \frac{1}{\theta} e^{-\frac{x}{\theta}} dx \nonumber \\
+&=e^{-\frac{k}{\theta}} \brak{1-e^{-\frac{k}{\theta}}} \label{PDF of Y}
 \end{align}
 Hence using lemma 2.1  and (\ref{pdf of Y}) lemma 2.3 is proved.
 \end{proof}`
