@@ -69,7 +69,7 @@ columns=fullflexible
 \begin{frame}
 \frametitle{Question}
 \begin{block}{CSIR-UGC NET-June 2015-Question-110}
-Suppose X has density $f\brak{\frac{x}{\theta}}=\frac{1}{\theta} e^{-x/\theta},x>0$ where $\theta > 0$ is unknown.Define Y as follows:
+Suppose X has density $f\brak{x | \theta}=\frac{1}{\theta} e^{-x/\theta},x>0$ where $\theta > 0$ is unknown.Define Y as follows:
 \begin{align}
 Y=k \text{ if } k \leq X < k+1, k=0,1,2 \cdots
 \end{align}
@@ -119,7 +119,7 @@ Where
 \begin{frame}
 \frametitle{Definitions Contd.}
 \begin{block}{Poisson distribution}
-A random variable X is said to have poisson distribution with parameter $\lambda > 0$ ,if it has probability distribution function in the form of 
+A random variable X is said to have poisson distribution with parameter $\lambda > 0$ ,if it has probability mass function in the form of 
 \begin{align}
 f\brak{k,\lambda}=\pr{k,\lambda}=\frac{\lambda ^k e^{- \lambda}}{k!}
 \end{align}
@@ -151,27 +151,14 @@ A distribution is said to be a geometric distribution if it is one of the two fo
 \begin{lemma}
 PDF of X is 
 \begin{align}
-P\brak{X=x}&=e^{-x}
+\pr{X}&=\frac{1}{\theta} e^{-\frac{x}{\theta}}
 \end{align}
 \end{lemma}
-\begin{proofs}
+\begin{proof}
 Given \textit{PDF} of X is 
 \begin{align}
-f\brak{\frac{x}{\theta}}&=\frac{1}{\theta} e^{-x/\theta},x>0,\text{where } \theta >0 \text{ is unknown}\\
-f\brak{X}&=\frac{1}{\theta}e^{-X},X>0\text{ as }x>0,\theta>0
-\end{align}
-\end{proofs}
-\end{frame}
-
-\begin{frame}{Solution Contd.}
-\begin{proof}[\proofname\ (Contd.)]
-$\because$ The total probability is 1 
-\begin{align}
-\int_0 ^\infty f\brak{X} dX &=1 \\
-\int _0^\infty \frac{1}{\theta} e^{-X} dX&=1 \nonumber \\
-\frac{1}{\theta}&=1 \nonumber \\
-\Rightarrow \theta &=1 \\
-\text{So }f\brak{X} = e^{-X}
+f\brak{x | \theta}&=\frac{1}{\theta} e^{-x/\theta},x>0,\text{where } \theta >0 \text{ is unknown}\\
+f\brak{x}&=\frac{1}{\theta}e^{-\frac{x}{\theta}} \text{since x and }\theta \text{ are independent} 
 \end{align}
 Hence lemma 2.1 is proved.
 \end{proof}
@@ -179,18 +166,17 @@ Hence lemma 2.1 is proved.
 
 \begin{frame}{Solution Contd.}
 \begin{lemma}
-PDF of Y is 
+PDF of Y is in the form of geometric distribution and is 
 \begin{align}
-p\brak{Y=k}&=e^{-k} \brak{1-e^{-1}}
+p\brak{Y=k}&=e^{-\frac{k}{\theta}} \brak{1-e^{-\frac{k}{\theta}}}
 \end{align}
-and is in the form of geometric distribution.
 \end{lemma}
 \begin{proof}
 Also given that Y=k if $k \leq X <k+1$ k=0,1,2,$\cdots$
 \begin{align}
 p\brak{Y=k}&=\int_k^{k+1} p\brak{X=x} dx\\
-&=\int_k^{k+1} e^{-x} dx \nonumber \\
-&=e^{-k}\brak{1-e^{-1}} \label{PDF of Y}
+&=\int_k^{k+1} \frac{1}{\theta} e^{-\frac{x}{\theta}} dx \nonumber \\
+&=e^{-\frac{k}{\theta}} \brak{1-e^{-\frac{k}{\theta}}} \label{PDF of Y}
 \end{align}
 Hence using (\ref{geometric 2}) and (\ref{PDF of Y}) lemma 2.2 is proved.
 \end{proof}`
