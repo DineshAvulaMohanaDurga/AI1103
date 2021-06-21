@@ -299,7 +299,7 @@ In this experiment we used definition \textbf{Soft Probabilistic Regression suit
 \begin{enumerate}
 \item A test in the multi-threaded domain is a combination of inputs and interleaving , where interleaving is the relative order in which the threads were executed. Running the same inputs twice may result in different outcomes. 
 \item The process depicted in \ref{old way} Load testing (i.e testing the applicatication under a real or stimulated workload), increases the likelihood of some interleaving that would be unlikely under light load. However , load testing is not systematic and is expensive and can be only executed at the end of the testing cycle.
-\item ConTest is a tool fo rgenerating different interleaving for the purpose of revealing concurrent faults.ConTest takes a heuristic approach of seeding the program with instrumentation in concurrently significant locations.  
+\item ConTest is a tool for generating different interleaving for the purpose of revealing concurrent faults.ConTest takes a heuristic approach of seeding the program with instrumentation in concurrently significant locations.  
 \item The process of re-execcuting tests using ConTest is depicted in \ref{new way} . Each time the functional test t is run as a result od seding technique , ConTest produces a potentially different interleaving.
 \seti
 \end{enumerate}
@@ -308,7 +308,7 @@ In this experiment we used definition \textbf{Soft Probabilistic Regression suit
 \begin{frame}{Regression suite for Software Testing with a limited Number of Test Executions Contd.}
 \begin{enumerate}
 \conti
-\item For the experiment we used 13 different heuristics as the test apecifications.Given the statistics collected for the 13 heuristics we constructed policies designed to maximize the coverage of the 10,000 events using no more than 250 and 1000 test runs.We used definition \textbf{Expected Coverage with limited probability} while using greedy technique to  get the solutions.
+\item For the experiment we used 13 different heuristics as the test specifications.Given the statistics collected for the 13 heuristics we constructed policies designed to maximize the coverage of the 10,000 events using no more than 250 and 1000 test runs.We used definition \textbf{Expected Coverage with limited probability} while using greedy technique to  get the solutions.
 \item The policy was designed to yield best coverage with 250 runs using only 2 heuristics.The policy for the 1000 runs was constructed on 4 heuristcs, two of which are dominant(used roughly 83\% of the time) 
 \seti
 \end{enumerate}
